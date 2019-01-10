@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">   
+    <title>第五题</title>
+    <style>
+    /* 场景1 */
+        /* 在没有加任何样式的时候，字体都是16px，因为都继承成了html的默认字体大小 */
+
+    /* 场景2 浏览器默认宽度为710px,p的父亲div没有设置大小，默认为16px*/   
+        /* div{background: rgba(0,0,0,0.5)}
+        .p1{font-size: 17px;background: yellow}
+        .p2{font-size: 2em;background: red}
+        .p3{font-size: 2rem;background: green}
+        .p4{font-size: 5vw;background: blue} */
+        /* 【结论】p,16px（继承的16px）   p1,17px（固定值）  p2,32px(div是16,16*2）  p3,32px(html是16,16*2） p4，35.5px(宽度是710*0.05） */
+    
+    /* 场景3 浏览器默认宽度为710px */    
+        /* div{font-size:19px;background: rgba(0,0,0,0.5)}
+        .p1{font-size: 17px;background: yellow}
+        .p2{font-size: 2em;background: red}
+        .p3{font-size: 2rem;background: green}
+        .p4{font-size: 5vw;background: blue} */
+        /* 【结论】p,19px(继承父亲div19px)   p1,17px（固定值）  p2,38px(div是19,19*2)  p3,32px（html是16px，16*2） p4，35.5px(宽度是710*0.05） */
+
+    /* 场景4 浏览器默认宽度为710px */
+        /* body{font-size: 100px;}
+        div{font-size:19px;background: rgba(0,0,0,0.5)}
+        .p1{font-size: 17px;background: yellow}
+        .p2{font-size: 2em;background: red}
+        .p3{font-size: 2rem;background: green}
+        .p4{font-size: 5vw;background: blue} */
+        /* 【结论】上述的p的值不会被body影响，还是跟场景3得到的值一样 */ 
+
+    /* 场景5 浏览器默认宽度为710px */
+        /* html{font-size: 21px;}
+        body{font-size: 100px;}
+        div{font-size:19px;background: rgba(0,0,0,0.5)}
+        .p1{font-size: 17px;background: yellow}
+        .p2{font-size: 2em;background: red}
+        .p3{font-size: 2rem;background: green}
+        .p4{font-size: 5vw;background: blue} */
+        /* 【结论】p,19px(继承父亲div19px)   p1,17px（固定值）  p2,38px(div是19,19*2)  p3,42px（html是21px，21*2） p4，35.5px(宽度是710*0.05） */
+        
+     
+    </style>
+</head>
+<body>   
+    <div>      
+        <p>没有设置任何属性的字体</p>
+        <p class="p1">px:固定单位</p>
+        <p class="p2">em：相对单位，相对父元素字体大小</p>
+        <p class="p3">rem：相对单位，相对于根元素（html）字体大小</p>
+        <p class="p4">vw：相对单位，1vw为屏幕宽度的1%</p>
+    </div>    
+</body>
+</html>
