@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>浮动元素对前面普通元素的影响</title>
+    <style>
+        *{padding: 0;margin: 0;font-size: 16px;}
+    .question1{border:1px solid red;margin: 50px} 
+    .question2{border:1px solid green;margin: 50px} 
+    .question3{border:1px solid blue;margin: 50px} 
+    .question4{border:1px solid yellow;margin: 50px} 
+    h1{background: turquoise;}
+    b{background: tomato;}
+   h1,b{float: left;}
+    </style>
+</head>
+<body>
+    <!-- <div class="question1">
+        <p>我是块级元素p里的文字</p>
+        <h1>块级元素设浮动</h1>
+    </div> -->
+
+
+    <div class="question2">
+        <span>我是行列元素span里的文字</span>
+        <h1>块级元素设浮动</h1>
+   </div>
+
+
+   <!-- <div class="question3">
+        <p>我是块级元素p里的文字</p>
+        <b>行级元素设浮动</b>
+    </div> -->
+
+
+    <div class="question4">
+        <span>我是行列元素span里的文字</span>       
+        <b>行级元素设浮动</b>
+   </div>
+
+
+    
+</body>
+</html>
