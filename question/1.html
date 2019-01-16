@@ -1,21 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>浮动元素对前面普通元素的影响</title>
     <style>
-        *{padding: 0;margin: 0;font-size: 16px;}
-    .question1{border:1px solid red;margin: 50px} 
-    .question2{border:1px solid green;margin: 50px} 
-    .question3{border:1px solid blue;margin: 50px} 
-    .question4{border:1px solid yellow;margin: 50px} 
-    h1{background: turquoise;}
-    b{background: tomato;}
-   h1,b{float: left;}
+        * {
+            padding: 0;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .question1 {
+            border: 1px solid red;
+            margin: 50px
+        }
+
+        .question2 {
+            border: 1px solid green;
+            margin: 50px
+        }
+
+        .question3 {
+            border: 1px solid blue;
+            margin: 50px
+        }
+
+        .question4 {
+            border: 1px solid yellow;
+            margin: 50px
+        }
+
+        h1 {
+            background: turquoise;
+        }
+
+        b {
+            background: tomato;
+        }
+
+        h1,
+        b {
+            float: left;
+        }
     </style>
 </head>
+
 <body>
     <!-- <div class="question1">
         <p>我是块级元素p里的文字</p>
@@ -23,24 +55,40 @@
     </div> -->
 
 
-    <div class="question2">
+    <!-- <div class="question2">
         <span>我是行列元素span里的文字</span>
         <h1>块级元素设浮动</h1>
-   </div>
+    </div> -->
 
 
-   <!-- <div class="question3">
+    <!-- <div class="question3">
         <p>我是块级元素p里的文字</p>
         <b>行级元素设浮动</b>
     </div> -->
 
 
     <div class="question4">
-        <span>我是行列元素span里的文字</span>       
+        <span>我是行列元素span里的文字</span>
         <b>行级元素设浮动</b>
-   </div>
+    </div>
+
+  <!-- 
+第一个，首先不管是行内元素还是块级元素，设置浮动后都有块级的特性，是一样的。比如span你设置浮动后可以设置宽高边距
+
+第二个，因为是普通的行内元素在dom位置的前面，而不是浮动元素在前。所以当空间变小时是浮动被挤下去。（此时的浮动元素有点像inline-block）
+
+第三个，为什么dom结构上行内元素在前浮动元素在后，呈现的结果却是看起来浮动在前行内元素在后？没有为什么，渲染规则是这样而已。这种场景也很少见
+
+ -->
 
 
-    
+  
+
+
+
+
+
+
 </body>
+
 </html>
